@@ -13,7 +13,7 @@ BUILD_MESSAGE=" Building project..."
 function run_cmake {
   echo ">[BUILD]<START>< Running cmake..."
   pushd build_files >/dev/null
-  cmake ..
+  cmake .. -Wno-deprecated
   popd >/dev/null
   echo ">[BUILD]<DONE>< Running cmake..."
 }

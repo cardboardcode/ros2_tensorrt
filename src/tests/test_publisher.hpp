@@ -44,9 +44,9 @@ class TestPublisher : public rclcpp::Node {
         array_topic_(config.array_topic) {
     // create the ROS2 items
     jpg_publisher_ =
-        this->create_publisher<sensor_msgs::msg::CompressedImage>(jpg_topic_);
+        this->create_publisher<sensor_msgs::msg::CompressedImage>(jpg_topic_, 10);
     array_publisher_ =
-        this->create_publisher<std_msgs::msg::Float32MultiArray>(array_topic_);
+        this->create_publisher<std_msgs::msg::Float32MultiArray>(array_topic_, 10);
     timer_ = this->create_wall_timer(
         25ms, std::bind(&TestPublisher::timer_callback, this));
 

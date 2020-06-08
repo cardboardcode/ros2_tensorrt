@@ -35,7 +35,7 @@ class TestSubscriber : public rclcpp::Node {
         gt_class_(config.gt_label) {
     test_array_subscriber_ =
         this->create_subscription<std_msgs::msg::Float32MultiArray>(
-            sub_topic_,
+            sub_topic_, 10,
             std::bind(&TestSubscriber::test_array_callback, this, _1));
 
     info_timer_ = this->create_wall_timer(
