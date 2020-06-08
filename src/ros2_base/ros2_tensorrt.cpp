@@ -35,9 +35,10 @@ Ros2TensorrtModule::Ros2TensorrtModule(const Ros2TensorrtModuleConfig &config)
   // handle the ROS2 items
   array_subscriber_ =
       this->create_subscription<std_msgs::msg::Float32MultiArray>(
-          sub_topic_, std::bind(&Ros2TensorrtModule::array_callback, this, _1));
+          sub_topic_, 10, std::bind(&Ros2TensorrtModule::array_callback, this, _1));
+
   array_publisher_ =
-      this->create_publisher<std_msgs::msg::Float32MultiArray>(pub_topic_);
+      this->create_publisher<std_msgs::msg::Float32MultiArray>(pub_topic_, 10);
 
   // handle information displaying
   info_timer_ = this->create_wall_timer(

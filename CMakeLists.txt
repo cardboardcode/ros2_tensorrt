@@ -63,6 +63,6 @@ add_subdirectory(${ROS2_BASE_DIR})
 #-------------------------------------------------------------------------------
 # Individual driver targets
 #-------------------------------------------------------------------------------
-set(ROS2_INFERENCE "${CMAKE_SOURCE_DIR}/src/ros2_inference")
-add_subdirectory(${ROS2_INFERENCE})
-add_subdirectory(src/tests)
+# set(ROS2_INFERENCE "${CMAKE_SOURCE_DIR}/src/ros2_inference")
+# add_subdirectory(${ROS2_INFERENCE})
+# add_subdirectory(src/tests)
